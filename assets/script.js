@@ -6,6 +6,19 @@ var tabs = document.querySelectorAll(".tab");
 var projectsCont = tabs[0];
 var photosCont = tabs[1];
 
+var overlay = document.getElementsByClassName("overlay")[0];
+overlay.addEventListener("click", closeOverlay);
+
+var overlayImg = overlay.querySelector("img");
+
+document.getElementsByClassName("overlay-content")[0].addEventListener("click", function(e) {
+  e.stopPropagation();
+});
+
+function closeOverlay(e) {
+  this.style.display = "none";
+}
+
 function getProjects() {
   for(let i=0; i < projects.length; i++) {
     var newProj = `
@@ -37,7 +50,14 @@ function changeTab() {
 
   if (this.dataset.name === "photos" && photosCont.childNodes.length < 1) {
     getPhotos();
+    var photos = document.querySelectorAll(".photo");
+    photos.forEach(photo => photo.addEventListener("click", openPhoto));
   }
+}
+
+function openPhoto(e) {
+  overlay.style.display = "grid";
+  overlayImg.src = e.currentTarget.querySelector('img').src;
 }
 
 getProjects();
