@@ -1,0 +1,257 @@
+
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+:root {
+  --bg: #fff;
+  --main: #ffc600;
+  --main-l: rgba(255, 198, 0, 0.7);
+  --main-d: #E5B200;
+  --gray: #E1DDD8;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  background-color: #eee;
+  margin: 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 5px 0;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: minmax(200px, 2fr) 1fr 12fr 1fr;
+  grid-template-rows: minmax(100px, 1fr);
+  grid-template-areas: "sidebar empty-space content";
+  padding: 10px;
+}
+
+@media (max-width: 700px) {
+  .wrapper {
+    grid-gap: 20px;
+    grid-template-areas:   "a sidebar b"
+                          "a content b";
+    grid-template-columns: 1fr 100fr 1fr;
+  }
+}
+
+@media (min-width: 1824px) {
+  .wrapper {
+    grid-gap: 20px;
+    grid-template-areas: "sidebar empty-1 content empty-2";
+    grid-template-columns: 220px 1fr 1300px 1fr;
+  }
+}
+
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.sidebar-title {
+  display: block;
+  border: 3px solid var(--main);
+  background-color: var(--main-l);
+  text-align: center;
+  color: #333;
+}
+
+.sidebar-title:hover {
+  background-color: var(--main-d);
+  color: white !important;
+}
+
+.info {
+  padding: 6px;
+  font-size: 12px;
+  border: 3px solid var(--main);
+  border-top: none;
+  text-align: center;
+  background-color: white;
+  /*
+  -webkit-border-bottom-right-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  border-bottom-right-radius: 6px;
+  */
+}
+
+.info__image {
+  margin-top: 10px;
+  border-radius: 50%;
+  width: 55px;
+}
+
+.info__desc {
+  color: #777;
+  padding: 5px;
+  font-style: italic;
+}
+
+.social-icons {
+  width: 100%;
+  padding: 10px 2px 0 2px;
+}
+
+.social-icons img {
+  width: 14px;
+}
+
+.content {
+  display: grid;
+  grid-template-areas:
+    "tab-btns-1"
+    "tabs"
+    "tab-btns-2"
+    "footer";
+  grid-template-rows: 30px minmax(50px, 1fr) fit-content(60px), minmax(50px, 50px);
+  grid-template-columns: 1fr;
+  grid-area: content;
+}
+
+.tabs {
+  grid-area: tabs;
+  background-color: #fff;
+  /*
+  border-left: 3px solid var(--main);
+  border-right: 3px solid var(--main);
+  */
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.photos {
+  display: none;
+  grid-template-columns: repeat(auto-fill, 200px);
+  grid-auto-rows: 200px;
+  grid-auto-flow: dense;
+  padding: 20px;
+}
+
+.photo {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 1;
+}
+
+.photo img {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tab-btns {
+  background-color: var(--main);
+}
+
+.tab-btns ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tab-btns li {
+  float:left;
+  display: block;
+  padding: 15px;
+  color: black;
+  cursor: pointer;
+}
+
+.active, .tab-btns li:hover {
+  background-color: var(--main-d);
+  color: white!important;
+}
+
+
+h4 {
+  font-size: 14px;
+  /*letter-spacing: 1px;*/
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 1px;
+}
+
+h5 {
+  font-size: 10px;
+  margin-bottom: 7px;
+}
+
+.project {
+  border: 3px solid var(--main);
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.project:hover {
+  border: 3px solid var(--main-d);
+  -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.2);
+  box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.2);
+}
+
+.project__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project__details {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: var(--main-l);
+  color: black;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+  text-align: center;
+  /*border-top: 3px solid var(--main-d);*/
+}
+
+.project__name {
+  font-size: 14px;
+  padding: 0;
+  margin: 4px;
+  margin-bottom: 0px;
+  font-weight: 700;
+}
+
+.project__desc {
+  font-size: 12px;
+  padding: 0;
+  margin: 3px;
+  margin-top: 0px;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.cr {
+  font-size: 12px;
+  color: #999;
+  float: right;
+}
