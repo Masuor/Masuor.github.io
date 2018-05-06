@@ -24,3 +24,30 @@ var projects = [
     "image": "/assets/images/4.png",
   }
 ];
+
+var photos = [
+  {
+    "thumb": "/assets/thumbs/baa.jpg",
+    "image": "/assets/images/baa.jpg",
+  },
+  {
+    "thumb": "/assets/thumbs/moss.jpg",
+    "image": "/assets/images/moss.jpg",
+  },
+  {
+    "thumb": "/assets/thumbs/guitar.jpg",
+    "image": "/assets/images/guitar.jpg",
+  },
+  {
+    "thumb": "/assets/thumbs/mountain.jpg",
+    "image": "/assets/images/mountain.jpg",
+  },
+  {
+    "thumb": "/assets/thumbs/dragonfly.jpg",
+    "image": "/assets/images/dragonfly.jpg",
+  },
+  {
+    "thumb": "/assets/thumbs/mountain2.jpg",
+    "image": "/assets/images/mountain2.jpg",
+  }
+];
