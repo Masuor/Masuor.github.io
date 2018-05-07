@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>gaem</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="main">
+    <div id="blocker"></div>
+    <div class="title"><h1>Memery Game</h1></div>
+    <div id="cont"></div>
+    <div class="stats">
+      <p id="score">corrects</p>
+      <button id="reset">Reset</button>
+    </div>
+  </div>
+
+<script>
+  var score, prev;
+  var cardNum = 16;//number of cards in game
+  var nums = [0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7];
+  var corrects = [];
+
+  var cont = document.getElementById('cont');
+  var blocker = document.getElementById("blocker");
+  var scoreBox = document.getElementById("score");
+  var resetBtn = document.getElementById("reset");
+  resetBtn.addEventListener('click', resetGame);
+
+  resetGame();
+
+  function generateCards(n) {
+    for(var i = 0; i < n; i++) {
+      var nDiv = document.createElement('div');
+      var nImg = document.createElement('img');
+      nDiv.id = i;
+      nDiv.classList.add('card');
+      nDiv.ondragstart = function () {return false;};
+      nDiv.appendChild(nImg);
+      cont.appendChild(nDiv);
+    }
+    var cards = document.querySelectorAll('.card');
+    cards.forEach(c => c.addEventListener('click', openCard));
+  }
+
+  //Fisher-yates shuffle
+  function randomize(arr) {
+    var temp;
+    for(var i = arr.length-1; i > 1; i--) {
+      var j = Math.floor(Math.random() * i);
+      temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+    }
+    return arr;
+  }
+
+  function openCard(e) {
+    var curr = this;
+    currImg = this.getElementsByTagName("img")[0];
+    currImg.src = `${nums[curr.id]}.jpg`;
+
+    scoreBox.classList.remove('hit');
+    curr.classList.add('open');
+    currImg.classList.add('openImg');
+
+    //IF 1 CARD ALREADY OPEN
+    if(prev !== null) {
+      //IF MATCH
+      if(nums[curr.id] == nums[prev.id]) {
+        console.log('match');
+        scoreBox.classList.add('hit');
+        curr.classList.add('match');
+        prev.classList.add('match');
+        corrects.push(curr);
+        corrects.push(prev);
+        prev = null;
+        updateScore();
+      }
+      //IF NO MATCH, CALL FUNTION TO CLOSE CARDS
+      else {
+        console.log("mismatch");
+        blocker.style.display = "block";
+        setTimeout(function() {
+          cont.classList.add("shake");
+          currImg.classList.add('closeImg');
+          prevImg.classList.add('closeImg');
+          prev.classList.add('close');
+          curr.classList.add('close');
+        }, 900);
+        var to = setTimeout(function(){closeCards(curr);}, 1200);
+      }
+    }
+    //IF NO PREV CARDS OPEN
+    else {
+      prev = curr;
+      prevImg = currImg;
+    }
+  }
+
+  function closeCards(curr) {
+    cont.classList.remove("shake");
+    currImg.classList.remove('closeImg','openImg');
+    prevImg.classList.remove('closeImg','openImg');
+    prev.classList.remove('close','open');
+    curr.classList.remove('close','open');
+    currImg.removeAttribute("src");
+    prevImg.removeAttribute("src");
+    blocker.style.display = "none";
+    prev = null;
+  }
+
+  function updateScore() {
+    score += 1;
+    scoreBox.innerHTML = `${score}/8`;
+    if (score == 8) {
+      var nWin = document.createElement('div');
+      nWin.id = "win";
+      cont.appendChild(nWin);
+    }
+  }
+
+  function resetGame() {
+    cont.classList.add("shake");
+    blocker.style.display = "block";
+    setTimeout(function() {
+      while (cont.firstChild) {
+        cont.removeChild(cont.firstChild);
+      }
+      blocker.style.display = "none";
+      cont.classList.remove("shake");
+      generateCards(cardNum);
+      nums = randomize(nums);
+      corrects = [];
+    }, 400);
+    prev = null;
+    if(corrects) {
+      corrects.forEach(a => a.classList.add('close'));
+      corrects.forEach(a => a.getElementsByTagName("img")[0].classList.add('closeImg'));
+    }
+    score = 0;
+    scoreBox.innerHTML = `${score}/8`;
+  }
+
+</script>
+</body>
+</html>
