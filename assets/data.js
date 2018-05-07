@@ -2,7 +2,7 @@ var projects = [
   {
     "name": "Browser game",
     "category": "web application, game",
-    "link": "",
+    "link": "https://masuor.github.io/game/index.html",
     "tools": "HTML5, JavaScript, CSS",
     "description": "Just a silly memory game made purely in JavaScript. The purpose was mostly to refresh myself on 'how to JavaScript'.",
     "created" : "2018",
@@ -41,7 +41,7 @@ var projects = [
   },
   {
     "name": "Three.js project",
-    "category": "web design, 3d",
+    "category": "Web design, 3D, game",
     "link": "",
     "tools": "JavaScript, Three.js, WebGL, 3ds Max",
     "description": "Some visual tests i made with Three.js -library as a part of my mediatechnology degree thesis. I was still extremely amateur programmer so the code is nothing too fancy. The models are made in 3ds Max.",
@@ -51,7 +51,7 @@ var projects = [
   },
   {
     "name": "Three.js project",
-    "category": "web design, 3d",
+    "category": "Web design, 3D, web-app",
     "link": "",
     "tools": "JavaScript, Three.js, WebGL",
     "description": "My first Three.js app. It was a prototype application for a local company. The idea was that the user can design and order a subwoofer box from a website. The application would allow you to customize the 3d-subwoofer interactively.",
@@ -60,17 +60,6 @@ var projects = [
     "image": "/assets/images/subwoofer.PNG",
   }
 ];
-
-/*  {
-    "name": "Web portfolio",
-    "category": "web design, front-end",
-    "link": "https://masuor.github.io",
-    "tools": "HTML5, JavaScript, CSS, CSS-Grid",
-    "description": "This portfolio you are currently looking at. I created this purely with basic javascript because i wanted to keep it simple. My aim was also to learn use css-grid, so i did most of the layout with it. Still quite rough to look at; maybe i will prettify it later!",
-    "created" : "2018",
-    "thumb": "/assets/thumbs/portfolio.PNG",
-    "image": "/assets/images/portfolio.PNG",
-  },*/
 
 var photos = [
   {
