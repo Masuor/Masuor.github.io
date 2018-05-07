@@ -60,7 +60,7 @@
   function openCard(e) {
     var curr = this;
     currImg = this.getElementsByTagName("img")[0];
-    currImg.src = `/game/${nums[curr.id]}.jpg`;
+    currImg.src = `${nums[curr.id]}.JPG`;
 
     scoreBox.classList.remove('hit');
     curr.classList.add('open');
