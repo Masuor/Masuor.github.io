@@ -1,3 +1,4 @@
+
 var projects = [
   {
     "name": "Browser game",
@@ -6,7 +7,7 @@ var projects = [
     "tools": "HTML5, JavaScript, CSS",
     "description": "Just a silly memory game made purely in JavaScript. The purpose was mostly to refresh myself on 'how to JavaScript'.",
     "created" : "2018",
-    "thumb": "/assets/thumbs/memegame.PNG",
+    "thumb": "/assets/images/memegame.PNG",
     "image": "/assets/images/memegame.PNG",
   },
   {
@@ -16,7 +17,7 @@ var projects = [
     "tools": "Illustrator, Photoshop, After Effects",
     "description": "An animation i made for Multimodal interaction course in university.",
     "created" : "2017",
-    "thumb": "/assets/thumbs/mumi.PNG",
+    "thumb": "/assets/images/mumi.PNG",
     "image": "/assets/images/mumi.PNG",
   },
   {
@@ -26,7 +27,7 @@ var projects = [
     "tools": "HTML5, JavaScript, CSS, Materialize",
     "description": "My old portfolio page.",
     "created" : "2015",
-    "thumb": "/assets/thumbs/port.PNG",
+    "thumb": "/assets/images/port.PNG",
     "image": "/assets/images/port.PNG",
   },
   {
@@ -36,7 +37,7 @@ var projects = [
     "tools": "Illustrator, Photoshop",
     "description": "A web service layout i made for FinnCode Oy back in 2015. Most of the graphics are made in Adobe Illustrator; i didn't do any programming.",
     "created" : "2015",
-    "thumb": "/assets/thumbs/layout.jpg",
+    "thumb": "/assets/images/layout.jpg",
     "image": "/assets/images/layout.jpg",
   },
   {
@@ -46,7 +47,7 @@ var projects = [
     "tools": "JavaScript, Three.js, WebGL, 3ds Max",
     "description": "Some visual tests i made with Three.js -library as a part of my mediatechnology degree thesis. I was still extremely amateur programmer so the code is nothing too fancy. The models are made in 3ds Max.",
     "created" : "2015",
-    "thumb": "/assets/thumbs/castle.PNG",
+    "thumb": "/assets/images/castle.PNG",
     "image": "/assets/images/castle.PNG",
   },
   {
@@ -56,7 +57,7 @@ var projects = [
     "tools": "JavaScript, Three.js, WebGL",
     "description": "My first Three.js app. It was a prototype application for a local company. The idea was that the user can design and order a subwoofer box from a website. The application would allow you to customize the 3d-subwoofer interactively.",
     "created" : "2014",
-    "thumb": "/assets/thumbs/subwoofer.PNG",
+    "thumb": "/assets/images/subwoofer.PNG",
     "image": "/assets/images/subwoofer.PNG",
   }
 ];
