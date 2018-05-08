@@ -51,7 +51,7 @@ function getProjects() {
 function getPhotos() {
   for (let i=0; i < photos.length; i++) {
     var newPhoto = `
-      <div class="photo photo-${Math.floor(Math.random()*5)}">
+      <div class="photo">
         <img src="${photos[i].thumb}">
       </div>`;
     photosCont.innerHTML += newPhoto;
