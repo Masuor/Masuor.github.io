@@ -1,5 +1,8 @@
 
-var projI = null; //will store current project index
+var projI = null; //will store current project's index
+var imgI = null; //will store cycle image's index
+var imgInterval = null; //will store image interval id
+//projects and photos -variables are in data.js
 
 var btns = document.querySelectorAll(".tab-btn");
 btns.forEach(btn => btn.addEventListener("click", changeTab));
@@ -38,6 +41,7 @@ function closeOverlay() {
 }
 
 function closeProject() {
+  clearInterval(imgInterval);
   projectsCont.style.display = "grid";
   projectExp.style.display = "none";
 }
@@ -66,6 +70,7 @@ function getPhotos() {
 }
 
 function changeTab() {
+  clearInterval(imgInterval);
   projectExp.style.display = "none";
   tabs.forEach(tab => tab.style.display = "none");
   btns.forEach(btn => btn.classList.remove("active"));
@@ -84,8 +89,22 @@ function openPhoto(e) {
   overlayImg.src = e.currentTarget.querySelector('img').src;
 }
 
+function cycleImage() {
+  if (projects[projI].images.length < imgI + 2) imgI = 0;
+  else imgI += 1;
+
+  projectImg.classList.remove("fade-out");
+  projectImg.classList.remove("fade-in");
+
+  setTimeout(function(){projectImg.classList.add("fade-out")}, 1000);
+  setTimeout(function(){projectImg.classList.add("fade-in")}, 2000);
+  setTimeout(function(){projectImg.src = projects[projI].images[imgI]}, 2000);
+  imgInterval = setTimeout(cycleImage, 4500);
+}
+
 function updateProject(i) {
-  projectImg.src = projects[i].image;
+  clearInterval(imgInterval);
+  projectImg.src = projects[i].images[0];
   projectTitle.innerHTML = projects[i].name;
   projectCat.innerHTML = projects[i].category;
   projectLink.innerHTML = projects[i].link;
@@ -96,8 +115,14 @@ function updateProject(i) {
 
   projectNaviL.style.display = "grid";
   projectNaviR.style.display = "grid";
+
   if (projI == 0) projectNaviL.style.display = "none";
   else if (projI == projects.length - 1) projectNaviR.style.display = "none";
+
+  if (projects[i].images.length > 1) {
+    imgI = 0;
+    cycleImage();
+  }
 }
 
 function openProject(e) {
@@ -108,11 +133,13 @@ function openProject(e) {
 }
 
 function prevProject() {
+  imgI = 0;
   projI -= 1;
   updateProject(projI);
 }
 
 function nextProject() {
+  imgI = 0;
   projI += 1;
   updateProject(projI);
 }

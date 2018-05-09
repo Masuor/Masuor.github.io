@@ -365,6 +365,15 @@ h5 {
   -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.15);
   -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.15);
   box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.15);
+  transition: all 1s ease;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 1;
 }
 
 .project-expanded h3 {

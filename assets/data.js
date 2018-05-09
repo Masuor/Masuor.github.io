@@ -8,7 +8,7 @@ var projects = [
     "description": "Ongoing personal project. The project involves sensor data monitoring application and cloud storage.",
     "created" : "2018",
     "thumb": "/assets/thumbs/rasp.jpg",
-    "image": "/assets/images/rasp.jpg",
+    "images": ["/assets/images/rasp.jpg"],
   },
   {
     "name": "Browser game",
@@ -18,7 +18,7 @@ var projects = [
     "description": "Just a silly memory game made purely in JavaScript. The purpose was mostly to refresh myself on 'how to JavaScript'.",
     "created" : "2018",
     "thumb": "/assets/thumbs/memegame.PNG",
-    "image": "/assets/images/memegame.PNG",
+    "images": ["/assets/images/memegame.PNG"],
   },
   {
     "name": "Animation",
@@ -28,7 +28,7 @@ var projects = [
     "description": "An animation I made for Multimodal Interaction course in university. The idea was to design a multimodal interface for bus passengers.",
     "created" : "2017",
     "thumb": "/assets/thumbs/mumi.PNG",
-    "image": "/assets/images/mumi.PNG",
+    "images": ["/assets/images/mumi.PNG"],
   },
   {
     "name": "Portfolio",
@@ -38,7 +38,7 @@ var projects = [
     "description": "My old portfolio page. The portfolio was made with materialize.",
     "created" : "2015",
     "thumb": "/assets/thumbs/port.PNG",
-    "image": "/assets/images/port.PNG",
+    "images": ["/assets/images/port.PNG"],
   },
   {
     "name": "Layout",
@@ -48,27 +48,27 @@ var projects = [
     "description": "A web service layout I made for FinnCode Oy back in 2015. Most of the graphics are made in Adobe Illustrator; i didn't do any programming.",
     "created" : "2015",
     "thumb": "/assets/thumbs/layout.png",
-    "image": "/assets/images/layout.jpg",
+    "images": ["/assets/images/layout.jpg"],
   },
   {
-    "name": "Three.js project",
+    "name": "Three.js project 2",
     "category": "Web design, 3D, Game",
     "link": "",
     "tools": "JavaScript, Three.js, WebGL, 3ds Max",
     "description": "Some visual tests i made with Three.js -library as a part of my Mediatechnology degree's thesis. The models are made in 3ds Max.",
     "created" : "2015",
     "thumb": "/assets/thumbs/castle.PNG",
-    "image": "/assets/images/castle.PNG",
+    "images": ["/assets/images/castle.PNG", "/assets/images/castle2.jpg"],
   },
   {
-    "name": "Three.js project",
+    "name": "Three.js project 1",
     "category": "Web design, 3D, Web-app",
     "link": "",
     "tools": "JavaScript, Three.js, WebGL",
     "description": "My first Three.js app. It was an prototype application for a local company. The idea was that the user can design and order a subwoofer box from the website. The application would allow you to customize and preview the subwoofer box's 3d model interactively in the browser.",
     "created" : "2014",
-    "thumb": "/assets/images/subwoofer.PNG",
-    "image": "/assets/images/subwoofer.PNG",
+    "thumb": "/assets/thumbs/subwoofer.PNG",
+    "images": ["/assets/images/subwoofer.PNG"],
   }
 ];
 
