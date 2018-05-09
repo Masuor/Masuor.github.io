@@ -1,4 +1,6 @@
 
+var projI = null; //will store current project index
+
 var btns = document.querySelectorAll(".tab-btn");
 btns.forEach(btn => btn.addEventListener("click", changeTab));
 
@@ -14,6 +16,11 @@ var projectLink = projectExp.querySelector(".project-expanded__link");
 var projectCreated = projectExp.querySelector(".project-expanded__created");
 var projectTools = projectExp.querySelector(".project-expanded__tools");
 var projectDesc = projectExp.querySelector(".project-expanded__desc");
+var projectNaviL = projectExp.querySelector(".navi-left");
+var projectNaviR = projectExp.querySelector(".navi-right");
+
+projectNaviL.addEventListener("click", prevProject);
+projectNaviR.addEventListener("click", nextProject);
 
 var projectCloseBtn = document.getElementsByClassName("project-close-btn")[0];
 projectCloseBtn.addEventListener("click", closeProject);
@@ -22,8 +29,8 @@ var overlay = document.getElementsByClassName("overlay")[0];
 overlay.addEventListener("click", closeOverlay);
 var overlayImg = overlay.querySelector("img");
 
-document.getElementsByClassName("overlay-content")[0].addEventListener("click", function(e) {
-  e.stopPropagation();
+document.getElementsByClassName("scroll-up-btn")[0].addEventListener("click", function() {
+  document.documentElement.scrollTop = 0;
 });
 
 function closeOverlay() {
@@ -77,18 +84,40 @@ function openPhoto(e) {
   overlayImg.src = e.currentTarget.querySelector('img').src;
 }
 
+function updateProject(i) {
+  projectImg.src = projects[i].image;
+  projectTitle.innerHTML = projects[i].name;
+  projectCat.innerHTML = projects[i].category;
+  projectLink.innerHTML = projects[i].link;
+  projectLink.href = projects[i].link;
+  projectCreated.innerHTML = projects[i].created;
+  projectTools.innerHTML = projects[i].tools;
+  projectDesc.innerHTML = projects[i].description;
+
+  projectNaviL.style.display = "grid";
+  projectNaviR.style.display = "grid";
+  if (projI == 0) projectNaviL.style.display = "none";
+  else if (projI == projects.length - 1) projectNaviR.style.display = "none";
+}
+
 function openProject(e) {
-  var projI = this.dataset.index;
+  projI = parseInt(this.dataset.index);
+  console.log(projI);
   projectsCont.style.display = "none";
   projectExp.style.display = "grid";
-  projectImg.src = projects[projI].image;
-  projectTitle.innerHTML = projects[projI].name;
-  projectCat.innerHTML = projects[projI].category;
-  projectLink.innerHTML = projects[projI].link;
-  projectLink.href = projects[projI].link;
-  projectCreated.innerHTML = projects[projI].created;
-  projectTools.innerHTML = projects[projI].tools;
-  projectDesc.innerHTML = projects[projI].description;
+  updateProject(projI);
+}
+
+function prevProject() {
+  projI -= 1;
+  console.log(projI);
+  updateProject(projI);
+}
+
+function nextProject() {
+  projI += 1;
+  console.log(projI);
+  updateProject(projI);
 }
 
 getProjects();

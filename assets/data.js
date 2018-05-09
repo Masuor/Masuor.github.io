@@ -2,7 +2,7 @@
 var projects = [
   {
     "name": "Raspberry Pi project",
-    "category": "Back end, sensor data",
+    "category": "Back-end, Sensor data",
     "link": "",
     "tools": "JavaScript, Node.js / Python",
     "description": "Ongoing personal project. The project involves sensor data monitoring application and cloud storage.",
@@ -12,7 +12,7 @@ var projects = [
   },
   {
     "name": "Browser game",
-    "category": "web application, game",
+    "category": "Web-app, Game",
     "link": "https://masuor.github.io/game/index.html",
     "tools": "HTML5, JavaScript, CSS",
     "description": "Just a silly memory game made purely in JavaScript. The purpose was mostly to refresh myself on 'how to JavaScript'.",
@@ -22,7 +22,7 @@ var projects = [
   },
   {
     "name": "Animation",
-    "category": "Graphical design, animation, UX",
+    "category": "Graphical design, Animation, UX",
     "link": "https://www.dropbox.com/s/emj21xhgxvf1xun/MUMI2016_project.mov?dl=0",
     "tools": "Illustrator, Photoshop, After Effects",
     "description": "An animation I made for Multimodal Interaction course in university. The idea was to design a multimodal interface for bus passengers.",
@@ -42,7 +42,7 @@ var projects = [
   },
   {
     "name": "Layout",
-    "category": "Graphical design, layout",
+    "category": "Graphical design, Layout",
     "link": "https://masuor.github.io/assets/images/layout.jpg",
     "tools": "Illustrator, Photoshop",
     "description": "A web service layout I made for FinnCode Oy back in 2015. Most of the graphics are made in Adobe Illustrator; i didn't do any programming.",
@@ -52,7 +52,7 @@ var projects = [
   },
   {
     "name": "Three.js project",
-    "category": "Web design, 3D, game",
+    "category": "Web design, 3D, Game",
     "link": "",
     "tools": "JavaScript, Three.js, WebGL, 3ds Max",
     "description": "Some visual tests i made with Three.js -library as a part of my Mediatechnology degree's thesis. The models are made in 3ds Max.",
@@ -62,7 +62,7 @@ var projects = [
   },
   {
     "name": "Three.js project",
-    "category": "Web design, 3D, web-app",
+    "category": "Web design, 3D, Web-app",
     "link": "",
     "tools": "JavaScript, Three.js, WebGL",
     "description": "My first Three.js app. It was an prototype application for a local company. The idea was that the user can design and order a subwoofer box from the website. The application would allow you to customize and preview the subwoofer box's 3d model interactively in the browser.",
