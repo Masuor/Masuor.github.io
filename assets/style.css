@@ -5,6 +5,7 @@
   --bg: #fff;
   --main: #bfd3c1;;
   --main-l: rgba(191, 211, 193, 0.75);
+  --main-ll: rgba(191, 211, 193, 0.1);
   --main-d: #98A89A;
 }
 
@@ -214,7 +215,6 @@ span {
 
 h4 {
   font-size: 14px;
-  /*letter-spacing: 1px;*/
   margin: 0;
   margin-top: 10px;
   margin-bottom: 1px;
@@ -291,7 +291,7 @@ h5 {
 }
 
 .project-expanded {
-  margin: 30px 0 30px 0;
+  margin: 0;
   display: none;
   grid-template-columns: minmax(30px, 1fr) 15fr minmax(30px, 1fr);
   grid-template-areas:
@@ -303,14 +303,13 @@ h5 {
 }
 
 .project-expanded-navi-btn {
-  margin-top: 200px;
   display: grid;
   align-items: center;
   justify-items: center;
   font-size: 30px;
-  background-color: var(--main);
+  background-color: var(bg);
   width: 25px;
-  height: 120px;
+  height: 100%;
   cursor: pointer;
 
   -webkit-touch-callout: none;
@@ -340,7 +339,7 @@ h5 {
   position: relative;
   width: 100%;
   display: block;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .project-close-btn {
@@ -387,6 +386,7 @@ h5 {
 .project-expanded__desc {
   grid-area: proj-e-desc;
   padding: 5px;
+  margin-bottom: 40px;
 }
 
 .footer {

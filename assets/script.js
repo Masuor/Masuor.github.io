@@ -102,7 +102,6 @@ function updateProject(i) {
 
 function openProject(e) {
   projI = parseInt(this.dataset.index);
-  console.log(projI);
   projectsCont.style.display = "none";
   projectExp.style.display = "grid";
   updateProject(projI);
@@ -110,13 +109,11 @@ function openProject(e) {
 
 function prevProject() {
   projI -= 1;
-  console.log(projI);
   updateProject(projI);
 }
 
 function nextProject() {
   projI += 1;
-  console.log(projI);
   updateProject(projI);
 }
 
