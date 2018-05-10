@@ -58,7 +58,7 @@ var projects = [
     "description": "Some visual tests i made with Three.js -library as a part of my Mediatechnology degree's thesis. The models are made in 3ds Max.",
     "created" : "2015",
     "thumb": "/assets/thumbs/castle.PNG",
-    "images": ["/assets/images/castle.PNG", "/assets/images/castle2.jpg"],
+    "images": ["/assets/images/castle.PNG"],
   },
   {
     "name": "Three.js Project 1",
