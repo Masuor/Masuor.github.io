@@ -12,7 +12,7 @@ var projectsCont = tabs[0];
 var photosCont = tabs[1];
 
 var projectExp = document.getElementsByClassName("project-expanded")[0];
-var projectImg = projectExp.querySelector("img");
+var projectImg = projectExp.querySelector(".project-expanded__image");
 var projectTitle = projectExp.querySelector("h3");
 var projectCat = projectExp.querySelector(".project-expanded__category");
 var projectLink = projectExp.querySelector(".project-expanded__link");

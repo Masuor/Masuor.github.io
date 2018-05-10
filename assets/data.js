@@ -51,7 +51,7 @@ var projects = [
     "images": ["/assets/images/layout.jpg"],
   },
   {
-    "name": "Three.js project 2",
+    "name": "Three.js Project 2",
     "category": "Web design, 3D, Game",
     "link": "",
     "tools": "JavaScript, Three.js, WebGL, 3ds Max",
@@ -61,7 +61,7 @@ var projects = [
     "images": ["/assets/images/castle.PNG", "/assets/images/castle2.jpg"],
   },
   {
-    "name": "Three.js project 1",
+    "name": "Three.js Project 1",
     "category": "Web design, 3D, Web-app",
     "link": "",
     "tools": "JavaScript, Three.js, WebGL",
