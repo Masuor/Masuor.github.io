@@ -4,6 +4,11 @@ var imgI = null; //will store cycle image's index
 var imgInterval = null; //will store image interval id
 //projects and photos -variables are in data.js
 
+var histI = 1;
+history.pushState({page: histI}, "", "index.html");
+
+
+
 var btns = document.querySelectorAll(".tab-btn");
 btns.forEach(btn => btn.addEventListener("click", changeTab));
 
@@ -77,12 +82,20 @@ function changeTab() {
   document.querySelectorAll(`li[data-name="${this.dataset.name}"]`).forEach(btn => btn.classList.add("active"));
   document.getElementsByClassName(this.dataset.name)[0].style.display = "grid";
 
+  histI += 1;
+  history.pushState({page: histI}, "", this.dataset.name + ".html");
+
   if (this.dataset.name === "photos" && photosCont.childNodes.length < 1) { //photos will only be loaded when the tab is opened
     getPhotos();
     var photos = document.querySelectorAll(".photo");
     photos.forEach(photo => photo.addEventListener("click", openPhoto));
   }
 }
+
+window.addEventListener('popstate', function(event) {
+  history.back();
+  console.log(event);
+}, false)
 
 function openPhoto(e) {
   overlay.style.display = "grid";
