@@ -4,11 +4,6 @@ var imgI = null; //will store cycle image's index
 var imgInterval = null; //will store image interval id
 //projects and photos -variables are in data.js
 
-var histI = 1;
-history.pushState({page: histI}, "", "index.html");
-
-
-
 var btns = document.querySelectorAll(".tab-btn");
 btns.forEach(btn => btn.addEventListener("click", changeTab));
 
@@ -82,20 +77,12 @@ function changeTab() {
   document.querySelectorAll(`li[data-name="${this.dataset.name}"]`).forEach(btn => btn.classList.add("active"));
   document.getElementsByClassName(this.dataset.name)[0].style.display = "grid";
 
-  histI += 1;
-  history.pushState({page: histI}, "", this.dataset.name + ".html");
-
   if (this.dataset.name === "photos" && photosCont.childNodes.length < 1) { //photos will only be loaded when the tab is opened
     getPhotos();
     var photos = document.querySelectorAll(".photo");
     photos.forEach(photo => photo.addEventListener("click", openPhoto));
   }
 }
-
-window.addEventListener('popstate', function(event) {
-  history.back();
-  console.log(event);
-}, false)
 
 function openPhoto(e) {
   overlay.style.display = "grid";
@@ -109,13 +96,15 @@ function cycleImage() {
   projectImg.classList.remove("fade-out");
   projectImg.classList.remove("fade-in");
 
-  setTimeout(function(){projectImg.classList.add("fade-out")}, 1000);
-  setTimeout(function(){projectImg.classList.add("fade-in")}, 2000);
-  setTimeout(function(){projectImg.src = projects[projI].images[imgI]}, 2000);
+  projectImg.classList.add("fade-out");
+  setTimeout(function(){projectImg.src = projects[projI].images[imgI]}, 550);
+  setTimeout(function(){projectImg.classList.add("fade-in")}, 650);
+
   imgInterval = setTimeout(cycleImage, 4500);
 }
 
 function updateProject(i) {
+  imgI = 0;
   clearInterval(imgInterval);
   projectImg.src = projects[i].images[0];
   projectTitle.innerHTML = projects[i].name;

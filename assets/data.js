@@ -18,7 +18,7 @@ var projects = [
     "description": "Just a silly memory game made purely in JavaScript. The purpose was mostly to refresh myself on 'how to JavaScript'.",
     "created" : "2018",
     "thumb": "/assets/thumbs/memegame.PNG",
-    "images": ["/assets/images/memegame.PNG"],
+    "images": ["/assets/images/game.jpg"],
   },
   {
     "name": "Animation",
@@ -28,7 +28,7 @@ var projects = [
     "description": "An animation I made for Multimodal Interaction course in university. The idea was to design a multimodal interface for bus passengers.",
     "created" : "2017",
     "thumb": "/assets/thumbs/mumi.PNG",
-    "images": ["/assets/images/mumi.PNG"],
+    "images": ["/assets/images/mumi.jpg"],
   },
   {
     "name": "Portfolio",
@@ -58,7 +58,7 @@ var projects = [
     "description": "Some visual tests i made with Three.js -library as a part of my Mediatechnology degree's thesis. The models are made in 3ds Max.",
     "created" : "2015",
     "thumb": "/assets/thumbs/castle.PNG",
-    "images": ["/assets/images/castle.PNG"],
+    "images": ["/assets/images/castle.jpg", "/assets/images/castle2.jpg"],
   },
   {
     "name": "Three.js Project 1",
