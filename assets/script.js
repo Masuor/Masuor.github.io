@@ -93,14 +93,8 @@ function cycleImage() {
   if (projects[projI].images.length < imgI + 2) imgI = 0;
   else imgI += 1;
 
-  projectImg.classList.remove("fade-out");
-  projectImg.classList.remove("fade-in");
-
-  projectImg.classList.add("fade-out");
-  setTimeout(function(){projectImg.src = projects[projI].images[imgI]}, 550);
-  setTimeout(function(){projectImg.classList.add("fade-in")}, 650);
-
-  imgInterval = setTimeout(cycleImage, 4500);
+  projectImg.src = projects[projI].images[imgI];
+  imgInterval = setTimeout(cycleImage, 4000);
 }
 
 function updateProject(i) {
@@ -123,7 +117,7 @@ function updateProject(i) {
 
   if (projects[i].images.length > 1) {
     imgI = 0;
-    cycleImage();
+    imgInterval = setTimeout(cycleImage, 4000);
   }
 }
 
