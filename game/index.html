@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>gaem</title>
+  <title>Game</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="main">
+  <div class="main noselect">
     <div id="blocker"></div>
-    <div class="title"><h1>Memery Game</h1></div>
+    <div class="title"><h1>Meme<span class="highlight">ry Game 2018</span></h1></div>
     <div id="cont"></div>
     <div class="stats">
       <p id="score">corrects</p>
@@ -123,6 +123,8 @@
   }
 
   function resetGame() {
+    scoreBox.classList.add('hit');
+    resetBtn.classList.add("hit");
     cont.classList.add("shake");
     blocker.style.display = "block";
     setTimeout(function() {
@@ -131,6 +133,8 @@
       }
       blocker.style.display = "none";
       cont.classList.remove("shake");
+      resetBtn.classList.remove("hit");
+      scoreBox.classList.remove('hit');
       generateCards(cardNum);
       nums = randomize(nums);
       corrects = [];

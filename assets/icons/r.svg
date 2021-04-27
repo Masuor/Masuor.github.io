@@ -12,7 +12,7 @@
  </metadata>
  <g transform="translate(-1.3263 -218.43)">
   <g transform="matrix(.61367 .61367 -.61367 .61367 66.334 105.87)">
-   <path transform="rotate(-90)" d="m-149.97 107.53h-52.917v-10.583h52.917v-52.917h10.583v52.917l1e-3 10.583z" stroke-width=".26458"/>
+   <path fill="#333" transform="rotate(-90)" d="m-149.97 107.53h-52.917v-10.583h52.917v-52.917h10.583v52.917l1e-3 10.583z" stroke-width=".26458"/>
   </g>
  </g>
 </svg>

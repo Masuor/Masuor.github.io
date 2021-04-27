@@ -87,6 +87,7 @@ function changeTab() {
 function openPhoto(e) {
   overlay.style.display = "grid";
   overlayImg.src = e.currentTarget.querySelector('img').src;
+  overlayImg.setAttribute("oncontextmenu", "return false");
 }
 
 function cycleImage() {
@@ -103,7 +104,7 @@ function updateProject(i) {
   projectImg.src = projects[i].images[0];
   projectTitle.innerHTML = projects[i].name;
   projectCat.innerHTML = projects[i].category;
-  projectLink.innerHTML = projects[i].link;
+  projectLink.innerHTML = projects[i].link_name;
   projectLink.href = projects[i].link;
   projectCreated.innerHTML = projects[i].created;
   projectTools.innerHTML = projects[i].tools;
