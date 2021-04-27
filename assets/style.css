@@ -14,10 +14,11 @@
   --main-d: #98A89A; */
   --bg: #fff;
   --main: #444;
-  --main-l: rgba(68, 68, 68, 0.92);
+  --main-l: rgba(68, 68, 68, 0.88);
   --main-ll: #444;
   --main-d: #555;
   --secondary: rgb(148, 216, 255);
+  --secondary-d: rgb(73, 106, 126);
 }
 
 html {
@@ -28,7 +29,7 @@ html {
 
 body {
   min-height: 100%;
-  background-color: #ddd;
+  background-color: #eee;
   margin: 0 !important;
 }
 
@@ -49,7 +50,7 @@ h3, h4 {
 
 a {
   text-decoration: none;
-  color: blue;
+  color: var(--secondary-d);
 }
 
 span {
@@ -259,7 +260,7 @@ h5 {
 .project {
   border: 2px solid var(--main);
   position: relative;
-  transition: all 0.1s ease;
+  transition: all 0.2s ease;
   cursor: pointer;
   overflow: hidden;
 }
